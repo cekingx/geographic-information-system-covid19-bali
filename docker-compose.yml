@@ -1,0 +1,50 @@
+version: "3"
+services:
+  #PHP Service
+  covid-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: covid-app
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - proxy
+
+  #Nginx Service
+  covid-server:
+    image: nginx:alpine
+    container_name: covid-server
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.covid.entrypoints=http"
+      - "traefik.http.routers.covid.rule=Host(`sigcovid.cekingx.my.id`)"
+      - "traefik.http.middlewares.covid-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.covid.middlewares=covid-https-redirect"
+      - "traefik.http.routers.covid-secure.entrypoints=https"
+      - "traefik.http.routers.covid-secure.rule=Host(`sigcovid.cekingx.my.id`)"
+      - "traefik.http.routers.covid-secure.tls=true"
+      - "traefik.http.routers.covid-secure.tls.certresolver=http"
+      - "traefik.http.routers.covid-secure.service=covid"
+      - "traefik.http.services.covid.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
+
+
+#Docker Networks
+networks:
+  proxy:
+    external: true

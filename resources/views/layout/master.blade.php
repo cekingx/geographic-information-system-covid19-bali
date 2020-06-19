@@ -44,27 +44,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="/" class="brand-link">
-                <img src="./img/logo.png" alt="Lara Logo" class="brand-image img-circle elevation-3"
-                    style="opacity: .8">
-                <span class="brand-text font-weight-light">Kopidid 19</span>
-            </a>
-
             <!-- Sidebar -->
             <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="./img/profile.png" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="/about-me" class="d-block">
-                            <h5>Widiana Putra</h5> {{-- {{Auth::user()->name}} --}}
-                        </a>
-                    </div>
-                </div>
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -74,25 +55,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="nav-item" class="nav-link">
                             <a href="/" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt blue"></i>
-                                <p>Beranda</p>
+                                <p>Dashboard</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="/data" class="nav-link">
                                 <i class="fas fa-book nav-icon teal"></i>
-                                <p>Manajemen Data</p>
+                                <p>Data Management</p>
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/about-me" class="nav-link">
-                                <i class="nav-icon fas fa-heart pink"></i>
-                                <p>
-                                    About Me
-                                </p>
-                            </a>
-                        </li>
                         <li class="nav-item">
                             
                         </li>
@@ -133,7 +106,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <footer class="main-footer">
             <!-- To the right -->
             <div class="float-right d-none d-sm-inline">
-                Anything you want
+                I Dewa Gede Dirga Yasa
             </div>
             <!-- Default to the left -->
             <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights

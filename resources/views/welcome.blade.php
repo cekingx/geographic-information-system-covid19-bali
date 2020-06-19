@@ -23,7 +23,7 @@
 <hr>
 <div class="row mt-3">
   <div class="col-12">
-    <h3>Tanggal {{$tanggalSekarang}}</h3>
+    <h3>{{$tanggalSekarang}}</h3>
   </div>
 </div>
 <!-- Small boxes (Stat box) -->
@@ -33,7 +33,7 @@
     <!-- small box -->
     <div class="small-box bg-indigo">
       <div class="inner">
-      <h3>{{$totalPositif[0]->total}}<sup style="font-size: 20px">Org</sup></h3>
+      <h3>{{$totalPositif[0]->total}}<sup style="font-size: 20px">Orang</sup></h3>
 
         <p>Positif</p>
       </div>
@@ -47,7 +47,7 @@
     <!-- small box -->
     <div class="small-box bg-green">
       <div class="inner">
-        <h3> {{$totalSembuh[0]->sembuh}}<sup style="font-size: 20px">Org</sup></h3>
+        <h3> {{$totalSembuh[0]->sembuh}}<sup style="font-size: 20px">Orang</sup></h3>
 
         <p>Sembuh</p>
       </div>
@@ -61,7 +61,7 @@
     <!-- small box -->
     <div class="small-box bg-yellow">
       <div class="inner">
-        <h3> {{$totalDirawat[0]->perawatan}}<sup style="font-size: 20px">Org</sup></h3>
+        <h3> {{$totalDirawat[0]->perawatan}}<sup style="font-size: 20px">Orang</sup></h3>
 
         <p>Dirawat</p>
       </div>
@@ -75,7 +75,7 @@
     <!-- small box -->
     <div class="small-box bg-red">
       <div class="inner">
-        <h3> {{$totalMeninggal[0]->meninggal}}<sup style="font-size: 20px">Org</sup></h3>
+        <h3> {{$totalMeninggal[0]->meninggal}}<sup style="font-size: 20px">Orang</sup></h3>
 
         <p>Meninggal</p>
       </div>
